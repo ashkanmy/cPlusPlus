@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include <stdexcept>
+#include<vector>
+
+using std::cout;
+using std::string;
+using std::invalid_argument;
+using std::vector;
+
+class Fruit
+{
+    public:
+       Fruit(string name,int count):name_(name),count_(count){}
+       Fruit(){}
+       void ShowFruit()
+       {
+          cout << "name--->" << name_ << "\n";
+          cout << "count-->" << count_ << "\n";
+       }
+    private:
+       string name_;
+       int count_;
+       void ValidateFruit()
+       {
+           if(count_<=0)
+              invalid_argument("Negative number of fruits!");       
+       }
+};
+
+class Basket
+{
+    public:
+       void AddFruit(string name,int count)
+       {
+          fruit_.push_back({name,count});
+       }
+       Fruit TakeFruit()
+       {
+           return fruit_.back();
+       }
+            
+    private:
+       vector<Fruit> fruit_;
+};
+
+int main()
+{
+    Basket basket;
+    Fruit fruit;
+
+    
+    basket.AddFruit("Apple",3);
+    fruit=basket.TakeFruit();
+    fruit.ShowFruit();
+    
+}
