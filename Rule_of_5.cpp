@@ -23,12 +23,12 @@ class MyPositiveInt
        MyPositiveInt(int i){ // --- Default constructor
            pi_=(int*)malloc(sizeof(int));
            *pi_=i;
-           Validate();                cout << "9\n";
+           Validate();                 
        }
        ~MyPositiveInt(){ // --- Destructor
            if (this!=nullptr){
                cout << "free : stack : " << this << " <--> Heap : " << pi_ << endl; 
-               free(pi_);                cout << "10\n";
+               free(pi_);                
            }
         }       
        
@@ -36,7 +36,7 @@ class MyPositiveInt
            pi_ =(int*)malloc(sizeof(int));
            *pi_=*pi.pi_;
            Validate();
-           pi.pi_=nullptr;                cout << "11\n";
+           pi.pi_=nullptr;              
            return *this;
        }
        
@@ -44,7 +44,7 @@ class MyPositiveInt
            pi_=(int*)malloc(sizeof(int));
            *pi_=*pi.pi_;
            Validate();
-           pi.pi_=nullptr;                cout << "12\n";
+           pi.pi_=nullptr;                 
        }
        
        MyPositiveInt(MyPositiveInt&& pi){ // --- Move constructor
@@ -52,7 +52,7 @@ class MyPositiveInt
           cout << pi.pi_ << " -- move constructor--> " << pi_ << endl;
           cout << "xxxxxxxxxxxxx" << endl;
           *pi_=*pi.pi_;
-          Validate();                cout << "13\n";
+          Validate();                 
           pi.pi_=nullptr;
        }
        
@@ -61,7 +61,7 @@ class MyPositiveInt
           cout << pi.pi_ << " -- move assignment --> " << pi_ << endl;
           cout << "xxxxxxxxxxxxx" << endl;
           if (pi_==pi.pi_) return *this; // self copy!
-          *pi_=*pi.pi_ ;                cout << "14\n";
+          *pi_=*pi.pi_ ;               
           pi.pi_=nullptr;
           return *this;
        }
