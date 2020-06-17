@@ -30,5 +30,8 @@
      cout << "----\n";
      your_access->Deposit(3000);
      cout << "Current-->" << my_access->Current() << endl;
+     cout << "----\n";
+     cout << "Stack addresses of shared pointers --> " << my_access.get() << " / " << your_access.get() << endl;
+     cout << "----\n";
      return 0;
  }
