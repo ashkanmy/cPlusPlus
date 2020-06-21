@@ -1,3 +1,7 @@
+//Here we adjusted the promise/future already 
+//written code so that it uses a async/future
+//mechanisem that is much shorter!
+
 #include <future>
 #include <iostream>
 
