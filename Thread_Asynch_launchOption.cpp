@@ -1,6 +1,8 @@
 //Here we check if the worker thread, needs to be synch. or 
 //asynch. with respect to the main-thread! We used the 
 //std::launch<--deferred or std::launch<--async option of the asynch!
+// In fact std::launch<--deferred or std::launch<--async is the 
+// amount of concurrency that we allow to be carried out!
 
 
 #include <future>
