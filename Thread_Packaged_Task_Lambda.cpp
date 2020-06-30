@@ -8,8 +8,9 @@ int main(){
                                                                 }
                                          );
     std::future<int> f=task.get_future();
-    task(3,4);
-    std::cout<<"S->"<<f.get()<<std::endl;
+    std::thread myThread(std::move(task),3,4);
+    myThread.join();
+    std::cout<<"->"<<f.get()<<std::endl;
     
     return 0;
 }
